@@ -47,7 +47,8 @@ extension DemoTableViewController {
 extension DemoTableViewController {
   
   override func scrollViewDidScroll(scrollView: UIScrollView) {
-    if scrollView.contentOffset.y < -25 {
+    if scrollView.contentOffset.y < -25 && navigationController != nil
+    {
       // buttonAnimation
       for case let viewController as DemoViewController in navigationController!.viewControllers {
         if case let rightButton as AnimatingBarButton = viewController.navigationItem.rightBarButtonItem {
